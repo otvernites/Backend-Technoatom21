@@ -18,10 +18,9 @@ class TicTacGame:
         print('+' + count * ('-' * 7 + '+'))
 
     def validate_input_name(self, name, num):
-        count = 15
         if num < 1 or num > 2:
             raise IndexError
-        if len(name) > count:
+        if len(name) > 15:
             raise ValueTooLargeError
         if len(name) == 0:
             raise ZeroValueError
