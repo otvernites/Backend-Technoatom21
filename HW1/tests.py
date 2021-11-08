@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 from exceptions import *
-from main import TicTacGame
+from tic_tac_toe import TicTacGame
 
 
 class MyTestCase(unittest.TestCase):
@@ -50,10 +50,10 @@ class MyTestCase(unittest.TestCase):
             self.game.validate_move((3, 1), 0)
 
         self.game.validate_move((0, 0), 0)
-        self.assertEqual(self.game.board[0, 0], 'X')
+        self.assertEqual(self.game.board[0][0], 'X')
 
         self.game.validate_move((0, 1), 1)
-        self.assertEqual(self.game.board[0, 1], '0')
+        self.assertEqual(self.game.board[0][1], '0')
 
         with self.assertRaises(ChoiceError):
             self.game.validate_move((0, 0), 1)
