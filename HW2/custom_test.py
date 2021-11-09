@@ -40,7 +40,8 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.my_list1, [1, 2, 3, 4])
 
     def test_add(self):
-        # оба CustomList
+
+# оба CustomList
         my_list2 = CustomList([0, 1, 2, 3])
         result = self.my_list1 + my_list2
         self.assertEqual(result, [1, 3, 5, 7])
@@ -52,20 +53,21 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, [6, 4, 13, 5])
         self.assertIsInstance(result, CustomList)
 
-        result = list3 + self.my_list1
-        self.assertEqual(result, [6, 4, 13, 5])
+        list4 = [0, 30, -7, 1]
+        result = list4 + self.my_list1
+        self.assertEqual(result, [1, 32, -4, 5])
         self.assertIsInstance(result, CustomList)
 
         # дополнение нулями
-        list3 = [5, 2, 10, 1, 10, 10]
-        result = self.my_list1 + list3
+        list5 = [5, 2, 10, 1, 10, 10]
+        result = self.my_list1 + list5
         self.assertEqual(result, [6, 4, 13, 5, 10, 10])
         self.assertEqual(self.my_list1, [1, 2, 3, 4])
 
         list3 = [5, 2]
         result = self.my_list1 + list3
-        self.assertEqual(result, [6, 4, 2, 3])
-        self.assertEqual(list3, [1, 2, 3, 4])
+        self.assertEqual(result, [6, 4, 3, 4])
+        self.assertEqual(list3, [5, 2])
 
         with self.assertRaises(NotListError):
             self.my_list1 + 1

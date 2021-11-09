@@ -29,13 +29,12 @@ class CustomClass(metaclass=CustomMeta):
     str = "hello"
     val = -1
 
-    def __init__(self, val=99):
-        self.val = val
+    def __init__(self, value=99):
+        self.value = value
         self.item = 10
 
-    def __set__(self, item=0, val=-2):
+    def __set__(self, item=0, value1=-2):
         self.item = item
-        self.val = val
 
     @classmethod
     def line(cls):

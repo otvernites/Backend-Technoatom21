@@ -13,6 +13,9 @@ class CustomList(list):
             lst[i[0]] = i[1] * (-1)
         return lst
 
+    def __radd__(self, curr_list):
+        return self + curr_list
+
     def __sub__(self, curr_list):
         self.check_type(curr_list)
         result = CustomList()
@@ -32,10 +35,11 @@ class CustomList(list):
     # a+b = a-(-1*b)
     def __add__(self, curr_list):
         self.check_type(curr_list)
+        opposite_mas = curr_list[:]
         for i in enumerate(curr_list):
-            curr_list[i[0]] = i[1] * (-1)
-            result = self - curr_list
-            return result
+            opposite_mas[i[0]] = i[1] * (-1)
+        result = self - opposite_mas
+        return result
 
     def __eq__(self, curr_list):  # ==
         self.check_type(curr_list)

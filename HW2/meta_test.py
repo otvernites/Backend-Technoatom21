@@ -11,7 +11,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(hasattr(self.inst, 'custom_x'), True)
         self.assertEqual(hasattr(self.inst, 'x'), False)
 
-        self.assertEqual(self.inst.custom_val, 99)
+        self.assertEqual(self.inst.custom_val, -1)
         self.assertEqual(hasattr(self.inst, 'custom_val'), True)
         self.assertEqual(hasattr(self.inst, 'val'), False)
 
